@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Gastos</title>
 </head>
-<body>
-    <h1>Registro de Gastos Diarios</h1>
+<body class="container mt-5">
+    <h1 class="mb-4">Registro de Gastos Diarios</h1>
+
+    <h2 class="mb-3">Buscar Gastos por Concepto</h2>
+    <div class="input-group mb-3">
+        <input type="text" id="inputBuscarConcepto" class="form-control" placeholder="Ingrese el concepto a buscar">
+        <div class="input-group-append">
+            <button id="btnBuscarConcepto" class="btn btn-primary">Buscar</button>
+        </div>
+    </div>
+
+    <div class="table-responsive mb-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Concepto</th>
+                    <th>Cantidad</th>
+                    <th>Usuario</th>
+                </tr>
+            </thead>
+            <tbody id="tablaResultados">
+            </tbody>
+        </table>
+    </div>
+
+    <form id="formCargarGasto">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <input type="text" name="concepto" class="form-control" placeholder="Ingrese el concepto del gasto">
+            </div>
+            <div class="form-group col-md-4">
+                <input type="number" name="cantidad" class="form-control" placeholder="Ingrese monto del gasto">
+            </div>
+            <div class="form-group col-md-4">
+                <input type="text" name="usuario" class="form-control" placeholder="Ingrese nombre del usuario que realizo el gasto">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Cargar Gasto</button>
+    </form>
+
+    <div class="mt-5">
+        <h2>Datos Cargados</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Cantidad</th>
+                        <th>Usuario</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaDatosCargados">
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Total gastos: $<span id="mostrarTotalGastos"></span></h3>
+        <button id="btnTotalGastos" class="btn btn-info">Calcular total</button>
+    </div>
+
     <script src="./js/main.js"></script>
 </body>
+
 </html>
