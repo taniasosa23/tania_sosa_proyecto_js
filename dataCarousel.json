@@ -1,0 +1,13 @@
+[
+    {
+        "titulo": "¿Qué es el control de gastos personales?",
+        "descripcion": "Llevar un control de gastos personales significa conocer cuánto ganas, en qué ocupas tu dinero cada día y cuáles son tus responsabilidades financieras",
+        "imagen": "./img/carousel/ahorro.jpg"
+    },
+    {
+        "titulo": "Importancia del ahorro",
+        "descripcion": "Aprender a ahorrar es esencial para mantener un equilibrio financiero a largo plazo. ",
+        "imagen": "./img/carousel/ahorro2.jpg"
+    }
+    
+]

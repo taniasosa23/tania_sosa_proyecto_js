@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
     <title>Registro de Gastos</title>
 </head>
-<body class="container mt-5">
-    <h1 class="mb-4">Registro de Gastos Diarios</h1>
-
-    <h2 class="mb-3">Buscar Gastos por Concepto</h2>
-    <div class="input-group mb-3">
-        <input type="text" id="inputBuscarConcepto" class="form-control" placeholder="Ingrese el concepto a buscar">
-        <div class="input-group-append">
-            <button id="btnBuscarConcepto" class="btn btn-primary">Buscar</button>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mi registro de Gastos Diarios</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="input-group">
+                            <input type="text" id="inputBuscarConcepto" class="form-control" placeholder="Buscar por concepto">
+                            <div class="input-group-append">
+                                <button id="btnBuscarConcepto" class="btn btn-primary" type="button"> 
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="table-responsive mb-4">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Concepto</th>
-                    <th>Cantidad</th>
-                    <th>Usuario</th>
-                </tr>
-            </thead>
-            <tbody id="tablaResultados">
-            </tbody>
-        </table>
-    </div>
+   
+<section class="container-fluid mt-0 pt-0">
+    
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators" id="carouselIndicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        </div>
+        <div class="carousel-inner" id="carouselInner">
+      
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
+    
+</section>
 
+ <section class="container mt-3 p-3 shadow">
+    <h2>Regista tus gastos</h2>
     <form id="formCargarGasto">
         <div class="form-row">
             <div class="form-group col-md-4">
@@ -41,7 +66,7 @@
                 <input type="number" name="cantidad" class="form-control" placeholder="Ingrese monto del gasto">
             </div>
             <div class="form-group col-md-4">
-                <input type="text" name="usuario" class="form-control" placeholder="Ingrese nombre del usuario que realizo el gasto">
+                <input type="text" name="usuario" class="form-control" placeholder="Ingrese nombre de quien realizó el gasto">
             </div>
         </div>
         <button type="submit" class="btn btn-success">Cargar Gasto</button>
@@ -68,7 +93,42 @@
         <button id="btnTotalGastos" class="btn btn-info">Calcular total</button>
     </div>
 
-    <script src="./js/main.js"></script>
+</section>
+ <!-- Modal -->
+<div class="modal fade" id="modalResultados" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Resultados de la búsqueda</h5>
+
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Fecha</th>
+                          <th>Concepto</th>
+                          <th>Cantidad</th>
+                          <th>Usuario</th>
+                      </tr>
+                  </thead>
+                  <tbody id="modalTablaResultados">
+                  </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+     
+  
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <script src="./js/main.js"></script>
 </body>
 
 </html>
