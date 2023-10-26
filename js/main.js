@@ -70,6 +70,7 @@ const buscarGastosPorConcepto = (concepto) => {
     
 }
 
+
 const buscar = () => {
     const btnBuscarConcepto = document.getElementById("btnBuscarConcepto");
     btnBuscarConcepto.addEventListener("click", () => {
